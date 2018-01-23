@@ -8,6 +8,7 @@ spring:
       database: MYSQL
       properties:
         hibernate:
+          enable_lazy_load_no_trans: true
           format_sql: true
           show_sql: true
           hbm2ddl:
