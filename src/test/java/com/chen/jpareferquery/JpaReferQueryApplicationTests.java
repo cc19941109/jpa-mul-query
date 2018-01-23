@@ -70,12 +70,22 @@ public class JpaReferQueryApplicationTests {
 	@Test
 	public void test3(){
 		Post one = postRepository.findOne(1L);
-//		Hibernate.initialize(one.getComments());
 
 		System.err.println(one);
 
 		System.err.println(commentRepository.findOne(1L));
+		System.out.println(" - - - - - -- - - - -- - - - - -\n");
+		Post two = postRepository.findOne(1L);
 
 	}
+
+	@Test
+	public void test4(){
+
+		Post withCommentsById = postRepository.findByIdAndFetchCommentsEagerly(1L);
+		System.err.println(withCommentsById);
+
+	}
+
 
 }
